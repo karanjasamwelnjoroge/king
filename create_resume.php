@@ -707,180 +707,25 @@ $conn->close();
                     </div>
 
                     <div class="questionnaire-container" id="questionnaire">
-                        <div class="question-card">
-                            <div class="question-number">1</div>
-                            <div class="question-text">How often do you save leftover food?</div>
-                            <div class="options-grid">
-                                <div class="option-item">
-                                    <input type="radio" name="q1" value="A" id="q1a" class="option-input" required>
-                                    <label for="q1a" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Never
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q1" value="B" id="q1b" class="option-input">
-                                    <label for="q1b" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Once a year
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q1" value="C" id="q1c" class="option-input">
-                                    <label for="q1c" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Once a month
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q1" value="D" id="q1d" class="option-input">
-                                    <label for="q1d" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Once a week
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q1" value="E" id="q1e" class="option-input">
-                                    <label for="q1e" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Once a day
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="question-card">
-                            <div class="question-number">2</div>
-                            <div class="question-text">How often do you compact your trash?</div>
-                            <div class="options-grid">
-                                <div class="option-item">
-                                    <input type="radio" name="q2" value="A" id="q2a" class="option-input" required>
-                                    <label for="q2a" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Never
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q2" value="B" id="q2b" class="option-input">
-                                    <label for="q2b" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Once a year
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q2" value="C" id="q2c" class="option-input">
-                                    <label for="q2c" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Once a month
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q2" value="D" id="q2d" class="option-input">
-                                    <label for="q2d" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Once a week
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q2" value="E" id="q2e" class="option-input">
-                                    <label for="q2e" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Once a day
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="question-card">
-                            <div class="question-number">3</div>
-                            <div class="question-text">About how many minutes is your average shower?</div>
-                            <div class="options-grid">
-                                <div class="option-item">
-                                    <input type="radio" name="q3" value="A" id="q3a" class="option-input" required>
-                                    <label for="q3a" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        5 minutes
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q3" value="B" id="q3b" class="option-input">
-                                    <label for="q3b" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        7 minutes
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q3" value="C" id="q3c" class="option-input">
-                                    <label for="q3c" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        13 minutes
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q3" value="D" id="q3d" class="option-input">
-                                    <label for="q3d" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        22 minutes
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q3" value="E" id="q3e" class="option-input">
-                                    <label for="q3e" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        36 minutes
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Continue with remaining questions using the same pattern -->
-                        <!-- For brevity, I'll include a few more key questions and indicate where others would go -->
-                        
-                        <div class="question-card">
-                            <div class="question-number">4</div>
-                            <div class="question-text">How often do you use disposable plates or cups at home?</div>
-                            <div class="options-grid">
-                                <div class="option-item">
-                                    <input type="radio" name="q4" value="A" id="q4a" class="option-input" required>
-                                    <label for="q4a" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Never
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q4" value="B" id="q4b" class="option-input">
-                                    <label for="q4b" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Once a year
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q4" value="C" id="q4c" class="option-input">
-                                    <label for="q4c" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Once a month
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q4" value="D" id="q4d" class="option-input">
-                                    <label for="q4d" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Once a week
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q4" value="E" id="q4e" class="option-input">
-                                    <label for="q4e" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Once a day
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
                         <?php
-                        // Define all questions for the questionnaire
+                        // Define all 56 questions for the questionnaire
                         $questions = [
+                            1 => [
+                                'text' => 'How often do you save leftover food?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Once a day']
+                            ],
+                            2 => [
+                                'text' => 'How often do you compact your trash?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Once a day']
+                            ],
+                            3 => [
+                                'text' => 'About how many minutes is your average shower?',
+                                'options' => ['5 minutes', '7 minutes', '13 minutes', '22 minutes', '36 minutes']
+                            ],
+                            4 => [
+                                'text' => 'How often do you use disposable plates or cups at home?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Once a day']
+                            ],
                             5 => [
                                 'text' => 'About how many microwavable dinners do you have in your freezer?',
                                 'options' => ['Zero', 'One', '2 to 4', '5 to 8', '9+']
@@ -1091,7 +936,7 @@ $conn->close();
                             ]
                         ];
 
-                        // Generate questions 5-56
+                        // Generate all questions 1-56
                         foreach ($questions as $qNum => $question): ?>
                         <div class="question-card">
                             <div class="question-number"><?= $qNum ?></div>
