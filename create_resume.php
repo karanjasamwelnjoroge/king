@@ -878,92 +878,239 @@ $conn->close();
                             </div>
                         </div>
 
-                        <div class="question-card">
-                            <div class="question-number">5</div>
-                            <div class="question-text">About how many microwavable dinners do you have in your freezer?</div>
-                            <div class="options-grid">
-                                <div class="option-item">
-                                    <input type="radio" name="q5" value="A" id="q5a" class="option-input" required>
-                                    <label for="q5a" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        Zero
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q5" value="B" id="q5b" class="option-input">
-                                    <label for="q5b" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        One
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q5" value="C" id="q5c" class="option-input">
-                                    <label for="q5c" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        2 to 4
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q5" value="D" id="q5d" class="option-input">
-                                    <label for="q5d" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        5 to 8
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q5" value="E" id="q5e" class="option-input">
-                                    <label for="q5e" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        9+
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        // Define all questions for the questionnaire
+                        $questions = [
+                            5 => [
+                                'text' => 'About how many microwavable dinners do you have in your freezer?',
+                                'options' => ['Zero', 'One', '2 to 4', '5 to 8', '9+']
+                            ],
+                            6 => [
+                                'text' => 'How much toilet paper do you use?',
+                                'options' => ['None', 'Tiny: 2-3 feet', 'Moderate: 4 - 6 feet', 'Lots: 6 – 9 feet', 'Tons']
+                            ],
+                            7 => [
+                                'text' => 'How much of your own food do you grow?',
+                                'options' => ['None', 'One plant type', 'Two plant types', '3-5 plant types', 'More than 5']
+                            ],
+                            8 => [
+                                'text' => 'Do you have solar panels?',
+                                'options' => ['No, and I have no interest.', 'No, but I would like to.', 'No, but I\'m saving money to get them.', 'I\'m looking for a vendor to purchase them.', 'I have them.']
+                            ],
+                            9 => [
+                                'text' => 'Do you have dual-pane windows?',
+                                'options' => ['No, and I have no interest.', 'No, but I would like to.', 'No, but I\'m saving money to get them.', 'I\'m looking for a vendor to purchase them.', 'I have them.']
+                            ],
+                            10 => [
+                                'text' => 'How long have you had a savings account?',
+                                'options' => ['Never', '1 year or less', '1-5 years', '6-10 years', 'Entire life']
+                            ],
+                            11 => [
+                                'text' => 'How much credit card debt do you have?',
+                                'options' => ['$1000 or less', '$1000 - $5000', '$5,000 to $15,000', 'Over $15,000', 'No credit cards']
+                            ],
+                            12 => [
+                                'text' => 'How much is your car loan?',
+                                'options' => ['$1000 or less', '$1000 - $5000', '$5,000 to $15,000', 'Over $15,000', 'No car loans']
+                            ],
+                            13 => [
+                                'text' => 'How often do you go to the dentist?',
+                                'options' => ['Twice/yearly', 'Once/yearly', 'Once every other year', 'Rarely, but not never', 'Never']
+                            ],
+                            14 => [
+                                'text' => 'How often do you get an oil change for your car?',
+                                'options' => ['No car', '3 months', '4 months', 'Twice a year', 'Once a year']
+                            ],
+                            15 => [
+                                'text' => 'When you do your laundry, how many loads of laundry do you do on that day?',
+                                'options' => ['1 or 2', '3 or 4', '5 to 6', '7 to 9 loads', '10+ loads']
+                            ],
+                            16 => [
+                                'text' => 'How often do you shop at thrift stores?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Once a day']
+                            ],
+                            17 => [
+                                'text' => 'How often do you attempt to solve your own plumbing, appliance repair, or pest control problems?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Once a day']
+                            ],
+                            18 => [
+                                'text' => 'How many times in the last 15 years have you helped a stray or wild animal?',
+                                'options' => ['Never', 'Once or twice', '3 to 4 times', '5 to 7 times', '8 or more']
+                            ],
+                            19 => [
+                                'text' => 'How many times in the last 15 years have you helped a stranger?',
+                                'options' => ['Never', 'Once or twice', '3 to 4 times', '5 to 7 times', '8 or more']
+                            ],
+                            20 => [
+                                'text' => 'What would you do to protect the life of your child?',
+                                'options' => ['I don\'t have children.', 'I would call the police.', 'I would beat someone up- then call the police.', 'I would inflict great bodily injury if required.', 'I would kill if required.']
+                            ],
+                            21 => [
+                                'text' => 'Where do you think black holes go?',
+                                'options' => ['Nowhere, they are not holes.', 'It is a wormhole to another part of the galaxy.', 'To a parallel universe.', 'To a different time.', 'To God.']
+                            ],
+                            22 => [
+                                'text' => 'Is it possible to hear a bullet and dodge it?',
+                                'options' => ['No.', 'Yes, but you would need super human speed.', 'Yes, but you would need really good hearing and be able to move over 88 MPH.', 'Yes, all you need is really good hearing.', 'Yes.']
+                            ],
+                            23 => [
+                                'text' => 'Do you believe faster than light travel is possible for a 4-man vehicle?',
+                                'options' => ['No, it requires too much energy.', 'Yes, but it would require all the power of 10 nuclear power plants to do it.', 'Yes, but you need to convert several grams of matter to pure energy to do it.', 'Yes, but you need to convert several tons of matter to pure energy to do it.', 'Yes, but you need to convert several planets to pure energy to do it.']
+                            ],
+                            24 => [
+                                'text' => 'How many people live on earth who have supernatural powers like the X-men, Superman, etc. (even if in secret)?',
+                                'options' => ['Zero', 'Less than 20', '20 to 100', '100 to 1,000', 'More than 1,000']
+                            ],
+                            25 => [
+                                'text' => 'How many aliens (who have traveled from other worlds in the universe to ours) live on earth?',
+                                'options' => ['Zero', 'Less than 20', '20 to 100', '100 to 1,000', 'More than 1,000']
+                            ],
+                            26 => [
+                                'text' => 'How many undead daemons from the underworld live on earth?',
+                                'options' => ['Zero', 'Less than 20', '20 to 100', '100 to 1,000', 'More than 1,000']
+                            ],
+                            27 => [
+                                'text' => 'How many people on earth can use witchcraft magic with spells like: teleportation, invisibility, resurrection, and summoning fire, lightning, objects, or beasts from thin air?',
+                                'options' => ['Zero', 'Less than 20', '20 to 100', '100 to 1,000', 'More than 1,000']
+                            ],
+                            28 => [
+                                'text' => 'Do you believe it is possible to travel back in time and change the past?',
+                                'options' => ['No.', 'Yes, but can\'t run into yourself or you vanish from the timeline.', 'Yes, but you would need to be able to move over 88 MPH.', 'Yes, but you would inhabit your own body and only bring your memories.', 'Yes, people do it frequently.']
+                            ],
+                            29 => [
+                                'text' => 'How much of the Theory of Evolution do you believe?',
+                                'options' => ['None of it.', 'Life is about 15,000 years old.', 'Life is about 60,000 years old and started with the Neanderthals.', 'Life started several million years ago, but we did not evolve from apes.', 'We evolved from a single cell in the primordial goo about 4 billion years ago.']
+                            ],
+                            30 => [
+                                'text' => 'How often do you watch TV?',
+                                'options' => ['Never', 'Once a month', 'Once a week', 'Every day', 'All day long']
+                            ],
+                            31 => [
+                                'text' => 'How often do you watch horror?',
+                                'options' => ['Never', 'Once a month', 'Once a week', 'Every day', 'All day long']
+                            ],
+                            32 => [
+                                'text' => 'How often do you watch pornography?',
+                                'options' => ['Never', 'Once a month', 'Once a week', 'Every day', 'All day long']
+                            ],
+                            33 => [
+                                'text' => 'How often do you watch science?',
+                                'options' => ['Never', 'Once a month', 'Once a week', 'Every day', 'All day long']
+                            ],
+                            34 => [
+                                'text' => 'How often do you yell or scream?',
+                                'options' => ['Never', 'Once a month', 'Once a week', 'Every day', 'All day long']
+                            ],
+                            35 => [
+                                'text' => 'How often do you get into a physical fist fight?',
+                                'options' => ['Never', 'Once a decade', 'Once a year', 'Once a month', 'Often']
+                            ],
+                            36 => [
+                                'text' => 'How often do you use marijuana?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Every day']
+                            ],
+                            37 => [
+                                'text' => 'How often do you use drugs other than marijuana?',
+                                'options' => ['Never', 'Once a month', 'Once a week', 'Every day', 'All day long']
+                            ],
+                            38 => [
+                                'text' => 'How often do get drunk?',
+                                'options' => ['Never', 'Once a month', 'Once a week', 'Every day', 'All day long']
+                            ],
+                            39 => [
+                                'text' => 'How often do you drink alcohol?',
+                                'options' => ['Never', 'Once a month', 'Once a week', 'Every day', 'All day long']
+                            ],
+                            40 => [
+                                'text' => 'How often do you smoke tobacco?',
+                                'options' => ['Never', 'Once a month', 'Once a week', 'Every day', 'All day long']
+                            ],
+                            41 => [
+                                'text' => 'How often do you vape?',
+                                'options' => ['Never', 'Once a month', 'Once a week', 'Every day', 'All day long']
+                            ],
+                            42 => [
+                                'text' => 'Of the last 15 years, how many of those years did you have a pet dog, cat, pig, hamster, bird, or similar animal that you played with?',
+                                'options' => ['All 15', '10 to 14', '4 to 9', '1 to 3', 'None']
+                            ],
+                            43 => [
+                                'text' => 'How many tattoos do you have?',
+                                'options' => ['None', '1 or 2', '3 to 5', '6 to 9', 'Lots']
+                            ],
+                            44 => [
+                                'text' => 'How many body piercings do you have?',
+                                'options' => ['None', '1 or 2', '3 to 5', '6 to 9', 'Lots']
+                            ],
+                            45 => [
+                                'text' => 'How often do you go to strip clubs?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Every day']
+                            ],
+                            46 => [
+                                'text' => 'How often do you go to sports bars?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Every day']
+                            ],
+                            47 => [
+                                'text' => 'How often do you go to bars without a dance floor?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Every day']
+                            ],
+                            48 => [
+                                'text' => 'How often do you gamble?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Every day']
+                            ],
+                            49 => [
+                                'text' => 'How often do you go to casinos?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Every day']
+                            ],
+                            50 => [
+                                'text' => 'How often do hire a prostitute?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Every day']
+                            ],
+                            51 => [
+                                'text' => 'How often do you play the Lottery?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Every day']
+                            ],
+                            52 => [
+                                'text' => 'How often do you get any kind of speeding ticket?',
+                                'options' => ['Never', '1 in 15 years', '2 in 10 years', 'Once a year', 'Once a month']
+                            ],
+                            53 => [
+                                'text' => 'How often do you go out to fast food?',
+                                'options' => ['Never', 'Once a year', 'Once a month', 'Once a week', 'Every day']
+                            ],
+                            54 => [
+                                'text' => 'Describe your relationship with your parents?',
+                                'options' => ['I don\'t talk to them; they don\'t talk to me.', 'I\'m better off without them. Once or twice a year I suffer their company.', 'It\'s okay. They try to run my life, but they don\'t understand me.', 'I love them, but things could be better. I love them. I am blessed.', 'They help me and support me. I would walk through fire for them.']
+                            ],
+                            55 => [
+                                'text' => 'Describe your relationship with your children?',
+                                'options' => ['I don\'t have children.', 'I don\'t talk to them; they don\'t talk to me.', 'It\'s okay. They try to run my life, but they don\'t understand me.', 'I love them, but things could be better.', 'They help me and support me. I would walk through fire for them.']
+                            ],
+                            56 => [
+                                'text' => 'Describe your relationship with your friends?',
+                                'options' => ['I don\'t have friends.', 'I don\'t talk to them; they don\'t talk to me.', 'It\'s okay. They try to run my life, but they don\'t understand me.', 'I love them, but things could be better.', 'They help me and support me. I would walk through fire for them.']
+                            ]
+                        ];
 
-                        <!-- Continue with all remaining questions from 6-56 -->
-                        <!-- Note: I'll include all the remaining questions to maintain functionality -->
-                        
+                        // Generate questions 5-56
+                        foreach ($questions as $qNum => $question): ?>
                         <div class="question-card">
-                            <div class="question-number">56</div>
-                            <div class="question-text">Describe your relationship with your friends?</div>
+                            <div class="question-number"><?= $qNum ?></div>
+                            <div class="question-text"><?= htmlspecialchars($question['text']) ?></div>
                             <div class="options-grid">
+                                <?php foreach ($question['options'] as $index => $option): ?>
+                                <?php $optionValue = chr(65 + $index); // A, B, C, D, E ?>
                                 <div class="option-item">
-                                    <input type="radio" name="q55" value="A" id="q55a" class="option-input" required>
-                                    <label for="q55a" class="option-label">
+                                    <input type="radio" name="q<?= $qNum ?>" value="<?= $optionValue ?>" 
+                                           id="q<?= $qNum ?><?= strtolower($optionValue) ?>" class="option-input" required>
+                                    <label for="q<?= $qNum ?><?= strtolower($optionValue) ?>" class="option-label">
                                         <div class="option-indicator"></div>
-                                        I don't talk to them; they don't talk to me.
+                                        <?= htmlspecialchars($option) ?>
                                     </label>
                                 </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q55" value="B" id="q55b" class="option-input">
-                                    <label for="q55b" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        I'm better off without them. Once or twice a year I suffer their company.
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q55" value="C" id="q55c" class="option-input">
-                                    <label for="q55c" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        It's okay. They try to run my life, but they don't understand me.
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q55" value="D" id="q55d" class="option-input">
-                                    <label for="q55d" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        I love them, but things could be better. I love them. I am blessed.
-                                    </label>
-                                </div>
-                                <div class="option-item">
-                                    <input type="radio" name="q55" value="E" id="q55e" class="option-input">
-                                    <label for="q55e" class="option-label">
-                                        <div class="option-indicator"></div>
-                                        They help me and support me. I would walk through fire for them.
-                                    </label>
-                                </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 
@@ -989,7 +1136,7 @@ $conn->close();
         // Progress tracking
         const progressFill = document.getElementById('progressFill');
         const form = document.getElementById('resumeForm');
-        const totalQuestions = 55;
+        const totalQuestions = 56;
         
         function updateProgress() {
             const answeredQuestions = form.querySelectorAll('input[type="radio"]:checked').length;
